@@ -1,79 +1,73 @@
 package pojo;
-/**
- * <p>Title: User</p>
- * <p>Describtion: </p>
- * <p>Company: www.git.com.cn</p>
- * @author  RongTongXin    
- * @version 1.0        
- * @created 2019年5月14日 下午3:20:24   
-*/
 
 import annotation.ApiModelProperty;
-import annotation.ObjectField;
+import annotation.ComparableObjectField;
 
 /**
- * 使用继承方便测试父类属性的比较
+ * @author RongTongXin
+ * @version 1.0
  */
-public class User extends BaseUser{
-	private Integer id;
+public class User extends BaseUser {
 
-	@ApiModelProperty("年龄")
-	private Integer age;
+    private Integer id;
 
-	@ApiModelProperty("联系人信息")
-	@ObjectField(compare = true)
-	private Linkman linkman;
+    @ApiModelProperty("年龄")
+    private Integer age;
 
-	@ApiModelProperty("银行卡信息")
-	@ObjectField(compare = false)
-	private CardInfo cardInfo;
+    @ApiModelProperty("联系人信息")
+    @ComparableObjectField
+    private Linkman linkman;
 
-	public Integer getAge() {
-		return age;
-	}
+    @ApiModelProperty("银行卡信息")
+    @ComparableObjectField(false)
+    private CardInfo cardInfo;
 
-	public void setAge(Integer age) {
-		this.age = age;
-	}
+    public Integer getAge() {
+        return age;
+    }
 
-	public Linkman getLinkman() {
-		return linkman;
-	}
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 
-	public void setLinkman(Linkman linkman) {
-		this.linkman = linkman;
-	}
+    public Linkman getLinkman() {
+        return linkman;
+    }
 
-	public Integer getId() {
-		return id;
-	}
+    public void setLinkman(Linkman linkman) {
+        this.linkman = linkman;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public CardInfo getCardInfo() {
-		return cardInfo;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public void setCardInfo(CardInfo cardInfo) {
-		this.cardInfo = cardInfo;
-	}
+    public CardInfo getCardInfo() {
+        return cardInfo;
+    }
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", age=" + age + ", linkman=" + linkman + ", cardInfo=" + cardInfo + "]";
-	}
+    public void setCardInfo(CardInfo cardInfo) {
+        this.cardInfo = cardInfo;
+    }
 
-	public User() {
-		super();	
-	}
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", age=" + age + ", linkman=" + linkman + ", cardInfo=" + cardInfo + "]";
+    }
 
-	public User(Integer id, Integer age, Linkman linkman, CardInfo cardInfo) {
-		super();
-		this.id = id;
-		this.age = age;
-		this.linkman = linkman;
-		this.cardInfo = cardInfo;
-	}
+    public User() {
+        super();
+    }
+
+    public User(Integer id, Integer age, Linkman linkman, CardInfo cardInfo) {
+        super();
+        this.id = id;
+        this.age = age;
+        this.linkman = linkman;
+        this.cardInfo = cardInfo;
+    }
 }
